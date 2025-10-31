@@ -37,6 +37,11 @@ header .top .left {
     display: flex;
     height: 20%;
     align-items: center;
+    gap: 10px;
+}
+
+header .top .left img {
+    margin-right: 20px;
 }
 
 header .top .left a {
@@ -99,6 +104,29 @@ header .bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-top: 2%;
+    margin-left: 16%;
+    margin-right: 16%;
+}
+
+header .bottom h1 {
+    font-size: 3rem;
+}
+
+header .bottom {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
