@@ -1,0 +1,104 @@
+/* ---------- BASE STYLES ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: auto;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgba(0, 0, 0, 0.842);
+    padding-bottom: 120px;
+}
+
+/* -------- HEADER -------- */
+header {
+    background-image: url(Images/BannerBackground.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 500px;
+}
+
+header .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 25px;
+}
+
+header .top .left {
+    display: flex;
+    height: 20%;
+    align-items: center;
+}
+
+header .top .left a {
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 15px;
+}
+
+header .top .right {
+    display: flex;
+    align-items: center;
+    height: 20%;
+    gap: 30px;
+}
+header .top .right form {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+header .top .right input {
+    font-size: 0.9rem;
+    border-radius: 10px;
+    border: none;
+    padding-left: 5px;
+}
+
+header .top .right input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+header .top .right button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+header .top .right button:hover {
+    background-color: rgba(0, 0, 0, 0.199);
+}
+
+header .top .right a {
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+header .top a:hover {
+    color: #FFD500;
+}
+
+header .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 15%;
+    margin-right: 15%;
+}
