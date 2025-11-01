@@ -110,7 +110,7 @@ header .bottom {
 }
 
 header .bottom h1 {
-    font-size: 3rem;
+    font-size: 5rem;
 }
 
 header .bottom {
@@ -129,4 +129,65 @@ header .bottom {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* -------- MAIN -------- */
+main {
+    margin-top: 20px;
+}
+
+main .slideshow {
+    position: relative;
+    height: 848px;
+    background: linear-gradient(180deg, #1a1a1a, #000000);
+
+}
+
+main .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+main .slide.active {
+  opacity: 1;
+}
+
+main .slideshow button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+main .slideshow .leftBut {
+    left: 20px;
+}
+
+main .slideshow .rightBut {
+    right: 20px;
+}
+
+main .slideshow button i {
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+main .slideshow .leftBut:hover {
+    background: linear-gradient(90deg, rgba(128, 128, 128, 0.75), rgba(128, 128, 128, 0.35));
+}
+
+main .slideshow .rightBut:hover {
+    background: linear-gradient(90deg, rgba(128, 128, 128, 0.35), rgba(128, 128, 128, 0.75));
 }

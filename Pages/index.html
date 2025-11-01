@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Images/Netrix Logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Images/Netrix Logo.png">
     <link rel="stylesheet" href="../style.css">
     <title>Netrix - Badminton Centre</title>
 </head>
@@ -12,7 +14,7 @@
         <!-- Navigation Bar -->
         <div class="top">
             <div class="left">
-                <img src="../Images/Netrix Logo.png" alt="" width="120px" height="70px">
+                <a href="index.html"><img src="../Images/Netrix Logo.png" alt="" width="120px" height="70px"></a>
                 <a href="Rackets.html">Rackets</a>
                 <a href="Grips.html">Grips</a>
                 <a href="Shuttlecocks.html">Shuttlecocks</a>
@@ -37,8 +39,18 @@
     </header>
 
     <main>
+        <div class="slideshow">
+            <img src="../Images/Banner1.png" class="slide active">
+            <img src="../Images/Banner2.png" class="slide">
+            <img src="../Images/Banner3.png" class="slide">
 
+            <!-- Slideshow Buttons -->
+            <button class="leftBut"><i class="material-icons">chevron_left</i></button>
+            <button class="rightBut"><i class="material-icons">chevron_right</i></button>
+        </div>
     </main>
 
+
+    <script src="../main.js"></script>
 </body>
 </html>
