@@ -26,6 +26,7 @@ header {
     height: 500px;
 }
 
+/* Main Nav */
 header .top {
     display: flex;
     align-items: center;
@@ -40,11 +41,23 @@ header .top .left {
     gap: 10px;
 }
 
+header .top .left .menu-btn {
+    display: none;
+    color: #FFFFFF;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+header .top .left .menu-btn i, .close-btn i {
+    font-size: 1.8rem;
+}
+
 header .top .left img {
     margin-right: 20px;
 }
 
-header .top .left a {
+header .top a {
     font-size: 1.1rem;
     text-decoration: none;
     color: #FFFFFF;
@@ -63,6 +76,7 @@ header .top .right form {
     display: flex;
     justify-content: center;
     margin: 0;
+    height: auto;
 }
 
 header .top .right input {
@@ -91,13 +105,52 @@ header .top .right button:hover {
 }
 
 header .top .right a {
-    font-size: 1.1rem;
-    text-decoration: none;
-    color: #FFFFFF;
+    padding: 0;
 }
 
 header .top a:hover {
     color: #FFD500;
+}
+
+/* Sidebar */
+header .sideBar {
+    background-color: black;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    box-shadow: 2px 0 rgba(151, 148, 148, 0.315);
+    padding: 50px 10px;
+    z-index: 999;
+}
+
+header .sideBar .close-btn {
+    background: transparent;
+    border: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+header .sideBar .close-btn i{
+    color: #FFFFFF;
+}
+
+header .sideBar a {
+    font-size: 1.1rem;
+    padding: 15px 5px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+header .sideBar a:hover {
+    background-color: rgba(155, 155, 155, 0.836);
+}
+
+header .sideBar .close-btn:hover {
+    background-color: rgba(155, 155, 155, 0.836);
 }
 
 header .bottom {
@@ -190,4 +243,71 @@ main .slideshow .leftBut:hover {
 
 main .slideshow .rightBut:hover {
     background: linear-gradient(90deg, rgba(128, 128, 128, 0.35), rgba(128, 128, 128, 0.75));
+}
+
+
+
+/* ----------------- Responsiveness -----------------*/
+@media (max-width: 1140px) {
+    header .top {
+        justify-content: space-around;
+    }
+
+    header .top .left img {
+        width: 100px;
+        height: 60px;
+        margin-right: 0;
+    }
+
+    header .top a {
+        font-size: 1rem;
+    }
+
+    header .top .searchBar input {
+        font-size: 0.7rem;
+    }
+
+    header .top .right button i {
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width: 1000px) {
+    header .top {
+        justify-content: space-around;
+    }
+
+    header .top .left img {
+        width: 80px;
+        height: 50px;
+        margin-right: 0;
+    }
+
+    header .top a {
+        font-size: 0.8rem;
+    }
+
+    header .top .searchBar input {
+        font-size: 0.7rem;
+    }
+
+    header .top .right button i {
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width: 900px) {
+    header .top {
+        justify-content: space-around;
+    }
+
+    header .top .left .menu-btn {
+        display: block;
+    }
+
+    header .top .left a:not(:first-of-type) {
+        display: none;
+    }
 }

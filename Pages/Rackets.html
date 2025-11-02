@@ -12,8 +12,19 @@
 <body>
     <header>
         <!-- Navigation Bar -->
+         <div class="sideBar">
+            <button class="close-btn" onclick="closeSidebar()"><i class="material-icons">close</i></button>
+            <a href="Rackets.html">Rackets</a>
+            <a href="Grips.html">Grips</a>
+            <a href="Shuttlecocks.html">Shuttlecocks</a>
+            <a href="Shoes.html">Shoes</a>
+            <a href="Bags.html">Bags</a>
+            <a href="Jerseys.html">Jerseys</a>
+        </div>
+
         <div class="top">
             <div class="left">
+                <button class="menu-btn" onclick="showSidebar()"><i class="material-icons">menu</i></button>
                 <a href="index.html"><img src="../Images/Netrix Logo.png" alt="" width="120px" height="70px"></a>
                 <a href="Rackets.html">Rackets</a>
                 <a href="Grips.html">Grips</a>
@@ -23,7 +34,7 @@
                 <a href="Jerseys.html">Jerseys</a>
             </div>
             <div class="right">
-                <form class="seacrhBar">
+                <form class="searchBar">
                     <input type="text" placeholder="Search Product">
                     <button type="submit"><i class="material-icons">search</i></button>
                 </form>
@@ -42,5 +53,6 @@
 
     </main>
 
+    <script src="../main.js"></script>
 </body>
 </html>

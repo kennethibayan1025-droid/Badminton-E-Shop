@@ -1,3 +1,16 @@
+// SIDEBAR
+function showSidebar (){
+  const sideBar = document.querySelector(".sideBar");
+  sideBar.style.display = "flex";
+}
+
+function closeSidebar (){
+  const sideBar = document.querySelector(".sideBar");
+  sideBar.style.display = "none";
+}
+
+
+// SLIDESHOWS
 let currentIndex = 0;
 const slides = document.querySelectorAll('.slide');
 
