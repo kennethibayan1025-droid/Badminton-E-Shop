@@ -11,25 +11,26 @@ function closeSidebar (){
 
 
 // SLIDESHOWS
-let currentIndex = 0;
+let index = 0;
 const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
 
-function showSlide(index) {
-  if (index >= slides.length) currentIndex = 0;
-  else if (index < 0) currentIndex = slides.length - 1;
-  else currentIndex = index;
-
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === currentIndex);
-  });
+function showSlide(i) {
+  slides.forEach(slide => slide.classList.remove('active'));
+  index = (i + totalSlides) % totalSlides; // wrap around
+  slides[index].classList.add('active');
 }
 
-// Button events
-document.querySelector('.leftBut').addEventListener('click', () => showSlide(currentIndex - 1));
-document.querySelector('.rightBut').addEventListener('click', () => showSlide(currentIndex + 1));
+// Button navigation
+document.querySelector('.prev').addEventListener('click', () => {
+  showSlide(index - 1);
+});
 
-// Optional auto-slide
-setInterval(() => showSlide(currentIndex + 1), 4000);
+document.querySelector('.next').addEventListener('click', () => {
+  showSlide(index + 1);
+});
 
-// Start slideshow
-showSlide(0);
+// Auto slide every 10 seconds
+setInterval(() => {
+  showSlide(index + 1);
+}, 10000);
