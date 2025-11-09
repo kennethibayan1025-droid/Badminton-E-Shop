@@ -34,10 +34,6 @@
                 <a href="Jerseys.html">Jerseys</a>
             </div>
             <div class="right">
-                <form class="searchBar">
-                    <input type="text" placeholder="Search Product">
-                    <button type="submit"><i class="material-icons">search</i></button>
-                </form>
                 <a href="">Cart</a>
                 <a href="">Account</a>
             </div>
@@ -45,11 +41,29 @@
         <!-- Product and Display -->
         <div class="bottom">
             <h1 style="color: #ffffff" >Rackets</h1>
-            <img src="../Images/Racket.png" alt="" width="400px" height="auto">
+            <img src="../Images/Racket.png" alt="">
         </div>
     </header>
 
     <main class="productsMain">
+        <div class="SandS">
+            <div class="sortDropdown">
+                <label for="sort">Sort By</label>
+                <select name="sort" id="sort">
+                    <option value="default">By Default</option>
+                    <option value="ascending">By Price (Low to High)</option>
+                    <option value="descending">By Price (High to Low)</option>
+                    <option value="AZ">Alphabetically (A to Z)</option>
+                    <option value="ZA">Alphabetically (Z to A)</option>
+                </select>
+            </div>
+
+            <form class="searchBar">
+                <input type="text" placeholder="Search Product">
+                <button type="submit"><i class="material-icons">search</i></button>
+            </form>
+        </div>
+
         <div class="products active">
             <div class="prod1">
                 <img src="../Images/Bag.png" alt="">
