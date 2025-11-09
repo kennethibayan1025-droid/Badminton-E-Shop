@@ -24,6 +24,7 @@ header {
     background-size: cover;
     background-position: bottom;
     height: auto;
+    padding-bottom: 30px;
 }
 
 /* Main Nav */
@@ -58,7 +59,7 @@ header .top .left img {
 }
 
 header .top a {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     text-decoration: none;
     color: #FFFFFF;
     padding: 15px;
@@ -69,39 +70,6 @@ header .top .right {
     align-items: center;
     height: 20%;
     gap: 30px;
-}
-header .top .right form {
-    background-color: white;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    height: auto;
-}
-
-header .top .right input {
-    font-size: 0.9rem;
-    border-radius: 10px;
-    border: none;
-    padding-left: 5px;
-}
-
-header .top .right input:focus {
-    outline: none;
-    border: none;
-    box-shadow: none;
-}
-
-header .top .right button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    border-radius: 10px;
-    padding: 5px;
-}
-
-header .top .right button:hover {
-    background-color: rgba(0, 0, 0, 0.199);
 }
 
 header .top .right a {
@@ -160,12 +128,15 @@ header .bottom {
     justify-content: space-between;
     align-items: center;
     margin-top: 2%;
-    margin-left: 16%;
-    margin-right: 16%;
+    margin: 0 18%;
 }
 
 header .bottom h1 {
     font-size: 5rem;
+}
+
+header .bottom img {
+    width: 400px;
 }
 
 header .bottom {
@@ -244,14 +215,81 @@ header .bottom {
 /* Products Pages */
 .productsMain {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 40px 0;
+    gap: 40px;
 }
 
+/* Sort and Search*/
+.productsMain .SandS {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.productsMain .SandS label {
+    font-size: 1.3rem;
+    color: #FFFFFF;
+    padding: 10px;
+    margin-right: 15px;
+}
+
+.productsMain .SandS #sort {
+    background: transparent;
+    font-size: 1rem;
+    padding: 8px;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.productsMain .SandS option {
+    background-color: black;
+}
+
+.productsMain .SandS .searchBar {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    height: auto;
+}
+
+.productsMain .SandS input {
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    padding-left: 5px;
+}
+
+.productsMain .SandS  input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.productsMain .SandS button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.productsMain .SandS button:hover {
+    background-color: rgba(0, 0, 0, 0.199);
+}
+
+/* Products Area */
 .productsMain .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-auto-rows: 1fr;
+    padding: 0 20px;
     gap: 20px;
     width: 100%;
     max-width: 1370px;
@@ -265,7 +303,6 @@ header .bottom {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    min-height: 550px;
     height: auto;
     padding: 25px;
     transition: transform 0.2s ease;
@@ -322,14 +359,13 @@ header .bottom {
         font-size: 1rem;
     }
 
-    header .top .searchBar input {
-        font-size: 0.7rem;
+    header .bottom h1 {
+        font-size: 2.1rem;
     }
 
-    header .top .right button i {
-        font-size: 1rem;
+    header .bottom img {
+        width: 250px;
     }
-
 }
 
 @media (max-width: 1000px) {
@@ -348,12 +384,12 @@ header .bottom {
         font-size: 0.8rem;
     }
 
-    header .top .searchBar input {
-        font-size: 0.7rem;
+    header .bottom h1 {
+        font-size: 2rem;
     }
 
-    header .top .right button i {
-        font-size: 1rem;
+    header .bottom img {
+        width: 200px;
     }
 
 }
@@ -362,6 +398,10 @@ header .bottom {
     /* ---------- Header ---------- */
     header .top {
         justify-content: space-around;
+    }
+
+    header .top a {
+        font-size: 1.1rem;
     }
 
     header .top .left .menu-btn {
@@ -375,6 +415,7 @@ header .bottom {
     header .bottom {
         justify-content: center;
         flex-direction: column;
+        gap: 10px;
     }
 
     header .bottom h1 {
@@ -386,7 +427,88 @@ header .bottom {
     }
 
     /* ---------- Main ---------- */
-    main .slideshow .prev, .slideshow .next {
+    .homeMain .slideshow .prev, .homeMain .slideshow .next {
         font-size: 1rem;
+    }
+
+    /* Products Pages */
+    /* Sort and Search */
+    .productsMain .SandS {
+        width: 90%;
+    }
+
+    .productsMain .SandS label {
+        font-size: 0.8rem;
+        margin: 1px;
+        padding: 2px;
+    }
+
+    .productsMain .SandS #sort {
+        font-size: 0.7rem;
+    }
+
+    .productsMain .SandS input {
+        font-size: 0.7rem;
+        width: 100%;
+    }
+
+    .productsMain .SandS button {
+        padding: 0;
+    }
+
+
+    /* Products Area*/
+    .productsMain .products {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 400px) {
+    /* ---------- Header ---------- */
+    header .top {
+        justify-content: space-around;
+    }
+
+    header .top a {
+        font-size: 0.8rem;
+    }
+
+    header .bottom {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    header .bottom h1 {
+        font-size: 1.5rem;
+    }
+
+    header .bottom img {
+        width: 200px;
+    }
+
+
+    /* ---------- Main ---------- */
+    .homeMain .slideshow button {
+        display: none;
+    }
+
+    /* Products Pages */
+    .productsMain .SandS label {
+        font-size: 0.6rem;
+        padding: 1px;
+        margin-right: 2px;
+    }
+
+    .productsMain .SandS #sort {
+        font-size: 0.5rem;
+    }
+
+    .productsMain .SandS input {
+        font-size: 0.5rem;
+        width: 100%;
+    }
+
+    .productsMain .SandS button i {
+        font-size: 0.9rem;
     }
 }
