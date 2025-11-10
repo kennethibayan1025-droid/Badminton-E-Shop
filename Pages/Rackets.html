@@ -46,6 +46,7 @@
     </header>
 
     <main class="productsMain">
+        <!-- Sort and Search -->
         <div class="SandS">
             <div class="sortDropdown">
                 <label for="sort">Sort By</label>
@@ -59,60 +60,94 @@
             </div>
 
             <form class="searchBar">
-                <input type="text" placeholder="Search Product">
+                <input type="text" id="searchInput" placeholder="Search Product">
                 <button type="submit"><i class="material-icons">search</i></button>
             </form>
         </div>
 
-        <div class="products active">
-            <div class="prod1">
-                <img src="../Images/Bag.png" alt="">
-                <h2>Yonex Bag</h2>
-                <button class="check">Check</button>
+        <!-- Products -->
+        <section class="productsSection">
+            <div class="products active">
+                <div class="prod" id="1">
+                    <img src="../Images/Bag.png" alt="">
+                    <p class="productName">Yonex Bag</p>
+                    <h3 class="productPrice">&#8369 1000.00</h3>
+                    <button class="addtoCart" id="atc1">Add to Cart</button>
+                    <button class="check" id="c1">Check</button>
+                </div>
+                <div class="prod" id="2">
+                    <img src="../Images/Bag.png" alt="">
+                    <p class="productName">Yonex Bag</p>
+                    <h3 class="productPrice">&#8369 1000.00</h3>
+                    <button class="addtoCart" id="atc2">Add to Cart</button>
+                    <button class="check" id="c2">Check</button>
+                </div>
+                <div class="prod" id="3">
+                    <img src="../Images/Bag.png" alt="">
+                    <p class="productName">Yonex Bag</p>
+                    <h3 class="productPrice">&#8369 1000.00</h3>
+                    <button class="addtoCart" id="atc3">Add to Cart</button>
+                    <button class="check" id="c3">Check</button>
+                </div>
+                <div class="prod" id="4">
+                    <img src="../Images/Bag.png" alt="">
+                    <p class="productName">Yonex Bag</p>
+                    <h3 class="productPrice">&#8369 1000.00</h3>
+                    <button class="addtoCart" id="atc4">Add to Cart</button>
+                    <button class="check" id="c4">Check</button>
+                </div>
+                <div class="prod" id="5">
+                    <img src="../Images/Bag.png" alt="">
+                    <p class="productName">Yonex Bag</p>
+                    <h3 class="productPrice">&#8369 1000.00</h3>
+                    <button class="addtoCart" id="atc5">Add to Cart</button>
+                    <button class="check" id="c5">Check</button>
+                </div>
+                <div class="prod" id="6">
+                    <img src="../Images/Bag.png" alt="">
+                    <p class="productName">Yonex Bag</p>
+                    <h3 class="productPrice">&#8369 1000.00</h3>
+                    <button class="addtoCart" id="atc6">Add to Cart</button>
+                    <button class="check" id="c6">Check</button>
+                </div>
+                <div class="prod" id="7">
+                    <img src="../Images/Bag.png" alt="">
+                    <p class="productName">Yonex Bag</p>
+                    <h3 class="productPrice">&#8369 1000.00</h3>
+                    <button class="addtoCart" id="atc7">Add to Cart</button>
+                    <button class="check" id="c7">Check</button>
+                </div>
+                <div class="prod" id="8">
+                    <img src="../Images/Bag.png" alt="">
+                    <p class="productName">Yonex Bag</p>
+                    <h3 class="productPrice">&#8369 1000.00</h3>
+                    <button class="addtoCart" id="atc8">Add to Cart</button>
+                    <button class="check" id="c8">Check</button>
+                </div>
+                <div class="prod" id="9">
+                    <img src="../Images/Bag.png" alt="">
+                    <p class="productName">Yonex Bag</p>
+                    <h3 class="productPrice">&#8369 1000.00</h3>
+                    <button class="addtoCart" id="atc9">Add to Cart</button>
+                    <button class="check" id="c9">Check</button>
+                </div>
             </div>
-            <div class="prod2">
-                <img src="../Images/Bag.png" alt="">
-                <h2>Yonex Bag</h2>
-                <button class="check">Check</button>
-            </div>
-            <div class="prod3">
-                <img src="../Images/Bag.png" alt="">
-                <h2>Yonex Bag</h2>
-                <button class="check">Check</button>
-            </div>
-            <div class="prod4">
-                <img src="../Images/Bag.png" alt="">
-                <h2>Yonex Bag</h2>
-                <button class="check">Check</button>
-            </div>
-            <div class="prod5">
-                <img src="../Images/Bag.png" alt="">
-                <h2>Yonex Bag</h2>
-                <button class="check">Check</button>
-            </div>
-            <div class="prod6">
-                <img src="../Images/Bag.png" alt="">
-                <h2>Yonex Bag</h2>
-                <button class="check">Check</button>
-            </div>
-            <div class="prod7">
-                <img src="../Images/Bag.png" alt="">
-                <h2>Yonex Bag</h2>
-                <button class="check">Check</button>
-            </div>
-            <div class="prod8">
-                <img src="../Images/Bag.png" alt="">
-                <h2>Yonex Bag</h2>
-                <button class="check">Check</button>
-            </div>
-            <div class="prod9">
-                <img src="../Images/Bag.png" alt="">
-                <h2>Yonex Bag</h2>
-                <button class="check">Check</button>
-            </div>
+        </section>
+
+
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="prev" disabled>&#10094</button>
+            <div class="pageButtons"></div>
+            <button class="next">&#10095</button>
         </div>
 
     </main>
+
+    <footer>
+        
+    </footer>
 
     <script src="../main.js"></script>
 </body>
