@@ -43,6 +43,7 @@ setInterval(() => {
 // PRODUCTS DISPLAY
 
 // PAGINATION FUNCTION
+// Responsive page numbers
 const totalPages = document.querySelectorAll('.products').length;
 const container = document.querySelector('.pageButtons');
 let pageIndex = 1;
@@ -57,4 +58,10 @@ for (let i = 1; i <= totalPages; i++) {
   }
 
   container.appendChild(button);
+}
+
+
+// CART WEBPAGE
+function goBack() {
+  window.history.back();
 }
