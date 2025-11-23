@@ -167,18 +167,23 @@ header .bottom {
 
 /* ----------- MAIN ----------- */
 .homeMain {
+    display: flex;
+    flex-direction: column;
     margin-top: 10px;
-    gap: 40px;
+    gap: 20px;
 }
 
 .homeMain .mainBanner {
+    background: url(Images/MainBanner.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-}
-
-.homeMain .mainBanner img {
-    anchor-name: --mainbanner;
 }
 
 .homeMain .mainBanner .mainText {
@@ -187,18 +192,19 @@ header .bottom {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    position: fixed;
-    position-anchor: --mainbanner;
-    position-area: center center;
-    translate: -50%;
+    translate: 0% -20%;
+
 }
 
 .homeMain .mainBanner .mainText h1 {
+    text-align: center;
     color: #ff2e2e;
     font-size: 4rem;
 }
 
 .homeMain .mainBanner .mainText p {
+    text-align: center;
+    max-width: 500px;
     color: #ffffff;
     font-size: 1.5rem;
 }
@@ -1213,6 +1219,23 @@ textarea:focus {
 
     header .bottom img {
         width: 250px;
+    }
+
+    /* ---------- Main ---------- */
+    .homeMain .mainBanner .mainText {
+        translate: 0%;
+    }
+
+    .homeMain .mainBanner .mainText h1 {
+        font-size: 3rem;
+    }
+
+    .homeMain .mainBanner .mainText p {
+        font-size: 1.2rem;
+    }
+
+    .homeMain .mainBanner .mainText a {
+        font-size: 1.5rem;
     }
 
     /* Cart Webpage */
