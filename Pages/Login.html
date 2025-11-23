@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Images/Netrix Logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Images/Netrix Logo.png">
+    <link rel="stylesheet" href="../style.css">
+    <title>Netrix - Login</title>
+</head>
+<body>
+    <header class="loginHeader">
+        <!-- Navigation Bar -->
+         <div class="sideBar">
+            <button class="close-btn" onclick="closeSidebar()"><i class="material-icons">close</i></button>
+            <a href="Rackets.html">Rackets</a>
+            <a href="Grips.html">Grips</a>
+            <a href="Shuttlecocks.html">Shuttlecocks</a>
+            <a href="Shoes.html">Shoes</a>
+            <a href="Bags.html">Bags</a>
+            <a href="Jerseys.html">Jerseys</a>
+        </div>
+
+        <div class="top">
+            <div class="left">
+                <button class="menu-btn" onclick="showSidebar()"><i class="material-icons">menu</i></button>
+                <a href="Home.html"><img src="../Images/Netrix Logo.png" alt="" width="120px" height="70px"></a>
+                <a href="Rackets.html">Rackets</a>
+                <a href="Grips.html">Grips</a>
+                <a href="Shuttlecocks.html">Shuttlecocks</a>
+                <a href="Shoes.html">Shoes</a>
+                <a href="Bags.html">Bags</a>
+                <a href="Jerseys.html">Jerseys</a>
+            </div>
+            <div class="right">
+                <a href="Cart.html">Cart</a>
+                <a href="Login.html" class="login">Login</a>
+                <a href="Account.html" class="account">Account</a>
+            </div>
+        </div>
+        <div class="bottom">
+            <h1 style="color: #ffffff">Login</h1>
+        </div>
+    </header>
+
+    <main class="loginMain">
+        <div class="loginBox">
+            <h2>Login</h2>
+            <hr>
+
+            <label>Email Address</label>
+            <input type="text" >
+
+            <label>Password</label>
+            <input type="password" >
+
+            <div class="actions">
+                <button class="btn">Sign In</button>
+                <a href="#">Forgot your password?</a>
+            </div>
+
+            <button class="signupbtn" onclick="toSignup()">Create account</button>
+        </div>
+
+        <div class="signupBox">
+            <h2>Create Account</h2>
+            <hr>
+            <div class="fullname">
+                <div class="firstname">
+                    <label>First Name</label>
+                    <input type="text" >
+                </div>
+
+                <div class="lastname">
+                    <label>Last Name</label>
+                    <input type="text" >
+                </div>
+            </div>
+
+            <label>Email Address</label>
+            <input type="text" >
+
+            <label>Password</label>
+            <input type="password" >
+
+            <div class="actions">
+                <button class="btn">Sign Up</button>
+            </div>
+
+            <button class="loginbtn" onclick="toLogin()">Already have an account?</button>
+        </div>
+    </main>
+
+
+    <script src="../main.js"></script>
+</body>
+</html>

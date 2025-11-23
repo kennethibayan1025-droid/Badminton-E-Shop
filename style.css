@@ -75,6 +75,14 @@ header .top .right a {
     padding: 0;
 }
 
+header .top .right .login {
+    display: block;
+}
+
+header .top .right .account {
+    display: none;
+}
+
 header .top a:hover {
     color: #FFD500;
 }
@@ -160,6 +168,53 @@ header .bottom {
 /* ----------- MAIN ----------- */
 .homeMain {
     margin-top: 10px;
+    gap: 40px;
+}
+
+.homeMain .mainBanner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.homeMain .mainBanner img {
+    anchor-name: --mainbanner;
+}
+
+.homeMain .mainBanner .mainText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: fixed;
+    position-anchor: --mainbanner;
+    position-area: center center;
+    translate: -50%;
+}
+
+.homeMain .mainBanner .mainText h1 {
+    color: #ff2e2e;
+    font-size: 4rem;
+}
+
+.homeMain .mainBanner .mainText p {
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+.homeMain .mainBanner .mainText a {
+    font-size: 2rem;
+    padding: 20px;
+    text-decoration: none;
+    color: red;
+    background-color: #FFD500;
+    border-radius: 50px;
+}
+
+.homeMain .mainBanner .mainText a:hover {
+    box-shadow: 0 0 3px #bea213, 0 0 15px #bea213, 0 0 20px #bea213;
+    transform: translateY(-2px);
 }
 
 .homeMain .slides {
@@ -469,28 +524,16 @@ footer p {
 /* Cart */
 .cartWeb {
     margin: 0;
-    padding: 20px;
+    padding: 5px;
     display: flex;
-}
-
-.cartWeb button {
-    font-size: 1.1rem;
-    color: #FFFFFF;
-    background: none;
-    border: none;
-    cursor: pointer;
-    height: 50px;
-    width: 150px;
-}
-
-.cartWeb button:hover {
-    color: #bea213;
+    background-color: #FFFFFF;
+    height: auto;
 }
 
 .cartArea {
-    display: flex;
-    min-height: 95vh;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+    gap: 5px;
 }
 
 .cartArea .cart {
@@ -498,8 +541,10 @@ footer p {
     flex-direction: column;
     align-items: center;
     background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 2px solid black;
     padding: 10px 5px;
-    width: 80%;
+    min-height: 95vh;
 }
 
 .cartArea .cart h1 {
@@ -528,7 +573,8 @@ footer p {
     justify-items: center;
     align-items: center;
     border: 2px solid ;
-    min-height: 117px;
+    height: auto;
+    min-height: 100px;
     max-height: 117px;
 }
 
@@ -538,14 +584,21 @@ footer p {
 
 .cartArea .cart .products .prod .productDetail {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 4fr;
     align-items: center;
     gap: 20px;
 }
 
+.cartArea .cart .products .prod .prodName {
+    max-height: 100px;
+    overflow: hidden;
+}
+
+
 .cartArea .cart .products .prod .quantitybox {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100px;
     height: 50px;
 }
@@ -555,6 +608,7 @@ footer p {
     background: none;
     border: none;
     cursor: pointer;
+    margin: 0 10px;
 }
 
 .cartArea .cart .products .prod .quantitybtn:hover {
@@ -562,19 +616,24 @@ footer p {
 }
 
 .cartArea .cart .products .prod .quantitybox input {
-    width: 40px;
+    width: 35px;
     text-align: center;
     border: 1px solid black;
     font-size: 1rem;
 }
 
-.cartArea .cart .products .prod button {
+.cartArea .cart .products .prod .deleteOrder {
     color: #000000;
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
-.cartArea .cart .products .prod button:hover {
+.cartArea .cart .products .prod .deleteOrder:hover {
     color: #bea213;
 }
+
 
 /* Payment */
 .cartArea .payment {
@@ -582,9 +641,10 @@ footer p {
     flex-direction: column;
     justify-content: space-between;
     background-color: #FFFFFF;
-    width: 20%;
     height: 500px;
     padding: 20px;
+    border-radius: 5px;
+    border: 2px solid black;
 }
 
 .cartArea .payment .top {
@@ -619,12 +679,20 @@ footer p {
 
 .cartArea .payment .bottom .checkout {
     font-size: 1rem;
+    font-weight: bold;
     margin-top: 10px;
     margin-bottom: 20px;
+    padding: 10px;
     width: 100%;
     color: #000000;
     background-color: #FFD500;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.cartArea .payment .bottom .checkout:hover {
+    box-shadow: 0 0 3px #bea213, 0 0 15px #bea213, 0 0 20px #bea213;
+    transform: translateY(-2px);
 }
 
 .cartArea .payment .bottom .back {
@@ -636,6 +704,491 @@ footer p {
 .cartArea .payment .bottom .back:hover {
     color: #bea213;
 }
+
+
+/* ---------- ACCOUNT WEBPAGE ---------- */
+.accountHeader, .loginHeader {
+    background: url(Images/BannerBackground.png);
+}
+
+.accountMain {
+    margin: 5% 10%;
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    gap: 30px;
+    height: 60vh;
+}
+
+.accountMain .aside {
+    background-color: #1f1d1d;
+    border-radius: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.accountMain .aside h3 {
+    font-size: 1.5rem;
+    padding: 30px 20px;
+    color: #979797;
+}
+
+.accountMain .aside a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #ffffff;
+    width: 100%;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+.accountMain .aside a:not(:last-child):hover {
+    background-color: #000000;
+}
+
+.accountMain .aside .signOut {
+    color: red;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.accountMain .aside .signOut:hover {
+    color: rgb(255, 61, 61);
+}
+
+.accountMain h1 {
+    color: #979797;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.accountMain p {
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+/* My Profile */
+.accountMain .profile {
+    display: none;
+    width: auto;
+    background-color: #1f1d1d;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.accountMain .profile label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #cfcfcf;
+}
+
+.accountMain .profile input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.accountMain .profile .name-fields {
+    display: flex;
+    gap: 20px;
+}
+
+.accountMain .profile .field {
+    flex: 1;
+}
+
+/* My Address */
+.accountMain .address {
+    display: none;
+    width: auto;
+    background-color: #1f1d1d;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.accountMain .address .add h2 {
+    font-size: 2rem;
+    color: #FFFFFF;
+    padding-bottom: 30px;
+    width: 100%;
+    border-bottom: 2px solid #979797;
+}
+
+.accountMain .address .add p {
+    margin: 10px 0;
+}
+
+.accountMain .address .actions {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    gap: 10px;
+}
+
+.accountMain .address .actions button {
+    color: #d40000;
+    font-size: 1rem;
+    background: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.accountMain .address .actions button:hover {
+    color: #ff4747;
+}
+
+/* My Order */
+.accountMain .order {
+    display: none;
+    width: auto;
+    background-color: #1f1d1d;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.accountMain .order .empty {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #242323;
+    gap: 20px;
+}
+
+.accountMain .order .empty svg {
+    width: 50px;
+}
+
+.accountMain .order .empty p {
+    margin-bottom: 0;
+}
+
+.accountMain .order .empty a {
+    color: red;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #FFD500;
+    text-decoration: none;
+}
+
+.accountMain .order .empty a:hover {
+    box-shadow: 0 0 3px #bea213, 0 0 15px #bea213, 0 0 20px #bea213;
+    transform: translateY(-2px);
+}
+
+/* Manage Account */
+.accountMain .manage {
+    display: none;
+    width: auto;
+    justify-content: space-between;
+    background-color: #1f1d1d;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.accountMain .manage div {
+    margin-bottom: 10px;
+    padding: 25px;
+    width: 100%;
+    background-color: #242323;
+}
+
+.accountMain .manage div h2{
+    margin: 0;
+    color: #FFFFFF;
+}
+
+.accountMain .manage .password a {
+    color: red;
+}
+
+.accountMain .active {
+    display: block;
+}
+
+/* ---------- LOGIN PAGE ---------- */
+.loginMain {
+    width: 100%;
+    height: 60vh;
+    max-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login */
+.loginBox {
+    display: block;
+    background-color: #000000bd;
+    padding: 20px;
+    border-radius: 10px;
+    width: 700px;
+    margin: 0 auto;
+}
+
+.loginBox h2 {
+    color: #d40000;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.loginBox hr {
+    border: none;
+    border-top: 1px solid #333;
+    margin-bottom: 25px;
+}
+
+.loginBox label {
+    display: block;
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.loginBox input {
+    width: 100%;
+    padding: 12px;
+    background-color: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.loginBox .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.loginBox .btn {
+    padding: 10px 20px;
+    border: 1px solid #d40000;
+    background: transparent;
+    color: #d40000;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.loginBox a {
+    color: #cfcfcf;
+    text-decoration: none;
+}
+
+.loginBox a:hover {
+    text-decoration: underline;
+}
+
+.loginBox .signupbtn {
+    margin-top: 20px;
+    background: transparent;
+    border: none;
+    color: #d40000;
+    cursor: pointer;
+}
+
+/* Sign Up */
+.signupBox {
+    display: none;
+    background-color: #000000bd;
+    padding: 20px;
+    border-radius: 10px;
+    width: 700px;
+    margin: 0 auto;
+}
+
+.signupBox h2 {
+    color: #d40000;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.signupBox hr {
+    border: none;
+    border-top: 1px solid #333;
+    margin-bottom: 25px;
+}
+
+.signupBox .fullname {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 10px;
+} 
+
+.signupBox label {
+    display: block;
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.signupBox input {
+    width: 100%;
+    padding: 12px;
+    background-color: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.signupBox .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signupBox .btn {
+    padding: 10px 20px;
+    border: 1px solid #d40000;
+    background: transparent;
+    color: #d40000;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.signupBox a {
+    color: #cfcfcf;
+    text-decoration: none;
+}
+
+.signupBox .loginbtn {
+    margin-top: 20px;
+    background: transparent;
+    border: none;
+    color: #d40000;
+    cursor: pointer;
+}
+
+/* ------------ ABOUT US ------------*/
+.aboutMain {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 5% 7%;
+    border-radius: 20px;
+}
+
+.aboutMain div {
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 50px;
+    border: 2px solid #bea213;
+    gap: 30px;
+}
+
+.aboutMain div:hover {
+    box-shadow: 0 0 3px #bea213, 0 0 15px #bea213, 0 0 20px #bea213;
+    transform: translateY(-2px);
+}
+
+.aboutMain h2 {
+    font-size: 2rem;
+    color: #FFD500;
+}
+
+.aboutMain p {
+    font-size: 1.2rem;
+    color: #FFFFFF;
+}
+
+/* ------------ CONTACT US ------------*/
+.contactMain {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.contactMain form {
+    width: 75%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #1c1c1c;
+    border: 1px solid #bea213;
+}
+
+.contactMain form h2 {
+    color: #bea213;
+    grid-column: span 2;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.contactMain form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactMain form label {
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.contactMain form input,
+textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.contactMain form input,
+textarea:focus {
+    outline: none;
+}
+
+.contactMain form textarea.issueBox {
+    height: 200px;
+    resize: vertical;
+}
+
+.contactMain form .messageRow {
+    grid-column: span 2;
+}
+
+.contactMain form button {
+    grid-column: span 2;
+    padding: 12px 25px;
+    background: rgb(49, 49, 49);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 140px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.contactMain form button:hover {
+    opacity: 0.85;
+}
+
+
 
 /* ----------------- Responsiveness -----------------*/
 @media (max-width: 1140px) {
@@ -661,6 +1214,14 @@ footer p {
     header .bottom img {
         width: 250px;
     }
+
+    /* Cart Webpage */
+    .cartArea {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
 }
 
 @media (max-width: 1000px) {
@@ -686,7 +1247,23 @@ footer p {
     header .bottom img {
         width: 200px;
     }
+    
+    /* Account Webpage */
+    .accountMain {
+        margin: 1% 2%;
+        gap: 10px;
+        height: 80vh;
+    }
 
+    .accountMain .aside h3 {
+        font-size: 1rem;
+        padding: 20px 10px;
+    }
+
+    .accountMain .aside a {
+        font-size: 0.8rem;
+        padding: 10px 15px;
+    }
 }
 
 @media (max-width: 905px) {
@@ -756,9 +1333,54 @@ footer p {
     .productsMain .products {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
+
+
+    /* Cart Webpage */
+    .cartArea .cart .subtitles h3 {
+        font-size: 1rem;
+    }
+
+    .cartWeb .cartArea .cart .products .prod h3 {
+        font-size: 1rem;
+    }
+
+    .cartArea .cart .products .prod img {
+        width: 100px;
+        height: 70px;
+    }
+
+    /* Account Webpage */
+    .accountMain {
+        margin: 1% 2%;
+        gap: 10px;
+        height: 80vh;
+    }
+
+    .accountMain .aside h3 {
+        font-size: 1rem;
+        padding: 20px 10px;
+    }
+
+    .accountMain .aside a {
+        font-size: 0.8rem;
+        padding: 10px 15px;
+    }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
+    /* Contact Webpage */
+    .contactMain form {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contactMain form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
     /* ---------- Header ---------- */
     header .top {
         justify-content: space-around;
@@ -806,4 +1428,54 @@ footer p {
     .productsMain .SandS button i {
         font-size: 0.9rem;
     }
+
+    /* Cart Webpage */
+    .cartArea .cart .subtitles h3 {
+        font-size: 0.6rem;
+    }
+
+    .cartWeb .cartArea .cart .products .prod h3 {
+        font-size: 0.55rem;
+    }
+
+    .cartArea .cart .products .prod img {
+        width: 60px;
+        height: 40px;
+    }
+
+    .cartArea .cart .products .prod .quantitybox {
+        width: auto;
+        height: 25px;
+    }
+
+    .cartArea .cart .products .prod .quantitybtn {
+        margin: 0 5px;
+    }
+
+    .cartArea .cart .products .prod .quantitybox input {
+        width: 18px;
+        font-size: 0.55rem;
+    }
+
+    .cartArea .cart .products .prod .deleteOrder {
+        font-size: 0.7rem;
+    }
+
+    /* Account Webpage */
+    .accountMain {
+        margin: 1% 2%;
+        gap: 10px;
+        height: 80vh;
+    }
+
+    .accountMain .aside h3 {
+        font-size: 1rem;
+        padding: 20px 10px;
+    }
+
+    .accountMain .aside a {
+        font-size: 0.8rem;
+        padding: 10px 15px;
+    }
+
 }

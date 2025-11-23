@@ -37,6 +37,7 @@ setInterval(() => {
   showSlide(index + 1);
 }, 10000);
 
+
 // PRODUCTS AREA
 // SORT AND SEARCH FUNCTION
 
@@ -64,4 +65,43 @@ for (let i = 1; i <= totalPages; i++) {
 // CART WEBPAGE
 function goBack() {
   window.history.back();
+}
+
+// LOGIN WEBPAGE
+function toSignup() {
+  const loginContainer = document.querySelector('.loginBox');
+  const signupContainer = document.querySelector('.signupBox');
+
+  loginContainer.style.display = 'none';
+  signupContainer.style.display = 'block';
+}
+
+function toLogin() {
+  const loginContainer = document.querySelector('.loginBox');
+  const signupContainer = document.querySelector('.signupBox');
+
+  loginContainer.style.display = 'block';
+  signupContainer.style.display = 'none';
+}
+
+// ACCOUNT WEBPAGE
+// Sidebar Function
+function openWindow(index) {
+  document.querySelector('.profile').classList.remove('active');
+  document.querySelector('.address').classList.remove('active');
+  document.querySelector('.order').classList.remove('active');
+  document.querySelector('.manage').classList.remove('active');
+
+  if (index == 0) {
+    document.querySelector('.profile').classList.add('active');
+  }
+  else if (index == 1) {
+    document.querySelector('.address').classList.add('active');
+  }
+  else if (index == 2) {
+    document.querySelector('.order').classList.add('active');
+  }
+  else if (index == 3) {
+    document.querySelector('.manage').classList.add('active');
+  }
 }
