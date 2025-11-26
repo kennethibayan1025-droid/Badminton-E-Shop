@@ -20,7 +20,7 @@ if (isset($_POST['login'])) {
         $_SESSION['user_id']   = $result['user_id'];
         $_SESSION['user_name'] = $result['username'];
         $_SESSION['email']     = $result['email'];
-        header("Location: Account.php");
+        header("Location: Home.php");
         exit();
     }
     else {
