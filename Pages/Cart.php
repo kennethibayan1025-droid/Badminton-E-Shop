@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    
+    // redirect if not logged in
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: Login.php");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +19,7 @@
     <link rel="stylesheet" href="../style.css">
     <title>Netrix - Badminton Centre</title>
 </head>
-<body class="cartWeb">
+<body class="<?php echo isset($_SESSION['user_id']) ? 'logged-in' : ''; ?>" id="cartWeb">
     <main class="cartArea">
         <div class="cart">
             <h1>Your Cart</h1>

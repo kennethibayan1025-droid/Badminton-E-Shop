@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    
+    // redirect if not logged in
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: Login.php");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,34 +19,34 @@
     <link rel="stylesheet" href="../style.css">
     <title>Netrix - Badminton Centre</title>
 </head>
-<body>
+<body class="<?php echo isset($_SESSION['user_id']) ? 'logged-in' : ''; ?>">
     <header>
         <!-- Navigation Bar -->
-         <div class="sideBar">
+        <div class="sideBar">
             <button class="close-btn" onclick="closeSidebar()"><i class="material-icons">close</i></button>
-            <a href="Rackets.html">Rackets</a>
-            <a href="Grips.html">Grips</a>
-            <a href="Shuttlecocks.html">Shuttlecocks</a>
-            <a href="Shoes.html">Shoes</a>
-            <a href="Bags.html">Bags</a>
-            <a href="Jerseys.html">Jerseys</a>
+            <a href="Rackets.php">Rackets</a>
+            <a href="Grips.php">Grips</a>
+            <a href="Shuttlecocks.php">Shuttlecocks</a>
+            <a href="Shoes.php">Shoes</a>
+            <a href="Bags.php">Bags</a>
+            <a href="Jerseys.php">Jerseys</a>
         </div>
 
         <div class="top">
             <div class="left">
                 <button class="menu-btn" onclick="showSidebar()"><i class="material-icons">menu</i></button>
-                <a href="Home.html"><img src="../Images/Netrix Logo.png" alt="" width="120px" height="70px"></a>
-                <a href="Rackets.html">Rackets</a>
-                <a href="Grips.html">Grips</a>
-                <a href="Shuttlecocks.html">Shuttlecocks</a>
-                <a href="Shoes.html">Shoes</a>
-                <a href="Bags.html">Bags</a>
-                <a href="Jerseys.html">Jerseys</a>
+                <a href="Home.php"><img src="../Images/Netrix Logo.png" alt="" width="120px" height="70px"></a>
+                <a href="Rackets.php">Rackets</a>
+                <a href="Grips.php">Grips</a>
+                <a href="Shuttlecocks.php">Shuttlecocks</a>
+                <a href="Shoes.php">Shoes</a>
+                <a href="Bags.php">Bags</a>
+                <a href="Jerseys.php">Jerseys</a>
             </div>
             <div class="right">
-                <a href="Cart.html">Cart</a>
-                <a href="Login.html" class="login">Login</a>
-                <a href="Account.html" class="account">Account</a>
+                <a href="Cart.php">Cart</a>
+                <a href="Login.php" class="login">Login</a>
+                <a href="Account.php" class="account">Account</a>
             </div>
         </div>
         <div class="bottom">
@@ -87,8 +97,8 @@
             <a href=""><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
         </div>
         <div class="about">
-            <a href="About.html">About Us</a>
-            <a href="Contact.html">Contact Us</a>
+            <a href="About.php">About Us</a>
+            <a href="Contact.php">Contact Us</a>
         </div>
         <p>Copyright 2025 Netrix.com</p>
     </footer>

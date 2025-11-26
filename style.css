@@ -60,7 +60,7 @@ header .top .left img {
 header .top a {
     font-size: 1.3rem;
     text-decoration: none;
-    color: #FFFFFF;
+    color: #ffffff;
     padding: 15px;
 }
 
@@ -75,12 +75,16 @@ header .top .right a {
     padding: 0;
 }
 
-header .top .right .login {
-    display: block;
-}
-
 header .top .right .account {
     display: none;
+}
+
+.logged-in header .top .right .login {
+    display: none;
+}
+
+.logged-in header .top .right .account {
+    display: block;
 }
 
 header .top a:hover {
@@ -346,17 +350,13 @@ header .bottom {
 
 /* Products Area */
 .productsMain .products {
-    display: none;
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-auto-rows: 1fr;
     padding: 0 20px;
     gap: 20px;
     width: 100%;
     max-width: 1370px;
-}
-
-.productsMain .active {
-    display: grid;
 }
 
 .productsMain .products .prod {
@@ -413,20 +413,10 @@ header .bottom {
     background-color: #bea213;
 }
 
-.productsMain .products .check {
-    background-color: rgba(219, 29, 29, 0.733);
-}
-
 .productsMain .products .addtoCart:hover {
     box-shadow: 0 0 3px #bea213, 0 0 15px #bea213, 0 0 20px #bea213;
     transform: translateY(-2px);
 }
-
-.productsMain .products .check:hover {
-    box-shadow: 0 0 3px rgba(219, 29, 29, 0.733), 0 0 15px rgba(219, 29, 29, 0.733), 0 0 20px rgba(219, 29, 29, 0.733);
-    transform: translateY(-2px);
-}
-
 
 
 /* Pagination Area */
@@ -528,7 +518,7 @@ footer p {
 
 /* ------------- CART WEBPAGE ------------- */
 /* Cart */
-.cartWeb {
+#cartWeb {
     margin: 0;
     padding: 5px;
     display: flex;

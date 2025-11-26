@@ -1,3 +1,23 @@
+<?php
+    session_start();
+
+    // redirect if not logged in
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: Login.php");
+        exit();
+    }
+
+    // Use null coalescing operator ?? to avoid undefined index
+    $email = $_SESSION['email'] ?? '';
+    $fullName = $_SESSION['user_name'] ?? '';
+
+    // Split full name
+    $nameParts = explode(" ", $fullName, 2);
+    $firstName = $nameParts[0] ?? '';
+    $lastName = $nameParts[1] ?? '';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,34 +29,34 @@
     <link rel="stylesheet" href="../style.css">
     <title>Netrix - Badminton Centre</title>
 </head>
-<body>
+<body class="<?php echo isset($_SESSION['user_id']) ? 'logged-in' : ''; ?>">
     <header class="accountHeader">
         <!-- Navigation Bar -->
-         <div class="sideBar">
+        <div class="sideBar">
             <button class="close-btn" onclick="closeSidebar()"><i class="material-icons">close</i></button>
-            <a href="Rackets.html">Rackets</a>
-            <a href="Grips.html">Grips</a>
-            <a href="Shuttlecocks.html">Shuttlecocks</a>
-            <a href="Shoes.html">Shoes</a>
-            <a href="Bags.html">Bags</a>
-            <a href="Jerseys.html">Jerseys</a>
+            <a href="Rackets.php">Rackets</a>
+            <a href="Grips.php">Grips</a>
+            <a href="Shuttlecocks.php">Shuttlecocks</a>
+            <a href="Shoes.php">Shoes</a>
+            <a href="Bags.php">Bags</a>
+            <a href="Jerseys.php">Jerseys</a>
         </div>
 
         <div class="top">
             <div class="left">
                 <button class="menu-btn" onclick="showSidebar()"><i class="material-icons">menu</i></button>
-                <a href="Home.html"><img src="../Images/Netrix Logo.png" alt="" width="120px" height="70px"></a>
-                <a href="Rackets.html">Rackets</a>
-                <a href="Grips.html">Grips</a>
-                <a href="Shuttlecocks.html">Shuttlecocks</a>
-                <a href="Shoes.html">Shoes</a>
-                <a href="Bags.html">Bags</a>
-                <a href="Jerseys.html">Jerseys</a>
+                <a href="Home.php"><img src="../Images/Netrix Logo.png" alt="" width="120px" height="70px"></a>
+                <a href="Rackets.php">Rackets</a>
+                <a href="Grips.php">Grips</a>
+                <a href="Shuttlecocks.php">Shuttlecocks</a>
+                <a href="Shoes.php">Shoes</a>
+                <a href="Bags.php">Bags</a>
+                <a href="Jerseys.php">Jerseys</a>
             </div>
             <div class="right">
-                <a href="Cart.html">Cart</a>
-                <a href="Login.html" class="login">Login</a>
-                <a href="Account.html" class="account">Account</a>
+                <a href="Cart.php">Cart</a>
+                <a href="Login.php" class="login">Login</a>
+                <a href="Account.php" class="account">Account</a>
             </div>
         </div>
     </header>
@@ -48,7 +68,7 @@
             <a class="sidebtn" onclick="openWindow(1)">My Address</a>
             <a class="sidebtn" onclick="openWindow(2)">My Order</a>
             <a class="sidebtn" onclick="openWindow(3)">Manage Account</a>
-            <a class="signOut">Sign Out</a>
+            <a class="signOut" href="../Functions/logout.php">Sign Out</a>
         </div>
 
         <div class="profile active">
@@ -56,19 +76,20 @@
             <p>You can modify your personal information here.</p>
 
             <label>Email</label>
-            <input type="text" disabled/>
+            <input type="text" disabled value="<?php echo htmlspecialchars($email); ?>" />
 
             <div class="name-fields">
                 <div class="field">
                     <label>First Name</label>
-                    <input type="text" disabled/>
+                    <input type="text" disabled value="<?php echo htmlspecialchars($firstName); ?>"/>
                 </div>
                 <div class="field">
                     <label>Last Name</label>
-                    <input type="text" disabled/>
+                    <input type="text" disabled value="<?php echo htmlspecialchars($lastName); ?>"/>
                 </div>
             </div>
         </div>
+
 
         <div class="address">
             <h1>My Address</h1>
@@ -77,8 +98,8 @@
             <div class="add">
                 <h2>Full Name</h2>
                 <p>Full Name</p>
-                <p>1234 Receiver Street</p>
-                <p>1740 Las Piñas</p>
+                <p>Street</p>
+                <p>City</p>
                 <p>Philippines</p>
             </div>
 
@@ -105,7 +126,7 @@
 
             <div class="email">
                 <h2>Email</h2>
-                <p>123example@gmail.com</p>
+                <p><?php echo htmlspecialchars($email); ?></p>
             </div>
             <div class="password">
                 <h2>Password</h2>
