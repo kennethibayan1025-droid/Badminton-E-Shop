@@ -95,17 +95,29 @@
             <h1>My Address</h1>
             <p>You can select and create address here</p>
 
+            <?php
+                $db = new SQLite3('../database.db');
+                $user_id = $_SESSION['user_id'];
+
+                $q = $db->prepare("SELECT * FROM addresses WHERE user_id = :uid LIMIT 1");
+                $q->bindValue(":uid", $user_id);
+                $address = $q->execute()->fetchArray(SQLITE3_ASSOC);
+            ?>
+
             <div class="add">
-                <h2>Full Name</h2>
-                <p>Full Name</p>
-                <p>Street</p>
-                <p>City</p>
-                <p>Philippines</p>
+                <h2><?php echo htmlspecialchars($address['full_name'] ?? 'No Name'); ?></h2>
+                <p><?php echo htmlspecialchars($address['street'] ?? ''); ?></p>
+                <p><?php echo htmlspecialchars($address['city'] ?? ''); ?></p>
+                <p><?php echo htmlspecialchars($address['country'] ?? 'Philippines'); ?></p>
             </div>
 
             <div class="actions">
-                <button class="editAddress">Edit</button>
-                <button class="deleteAddress">Delete</button>
+                <a class="editAddress" href="../Functions/edit_address.php">Edit</a>
+                <a class="deleteAddress" href="../Functions/delete_address.php" 
+                    onclick="return confirm('Are you sure you want to delete this address?');">
+                    Delete
+                </a>
+
             </div>
         </div>
 

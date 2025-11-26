@@ -827,17 +827,83 @@ footer p {
     gap: 10px;
 }
 
-.accountMain .address .actions button {
+.accountMain .address .actions .editAddress,
+.accountMain .address .actions .deleteAddress {
     color: #d40000;
     font-size: 1rem;
     background: transparent;
     border: none;
     padding: 10px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .accountMain .address .actions button:hover {
     color: #ff4747;
+}
+
+/* Edit Address */
+#editAdd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#editAdd .editAddMain{
+    display: grid;
+    grid-template-columns: 1fr;
+    min-width: 50%;
+    max-width: 95%;
+    align-items: center;
+    background-color: #1f1d1d;
+    padding: 50px;
+    gap: 20px;
+}
+
+.editAddMain h1 {
+    font-size: 3rem;
+    color: red;
+}
+
+.editAddMain form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.editAddMain form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.editAddMain form label {
+    font-size: 1.6rem;
+    color: #FFFFFF;
+}
+
+.editAddMain form input {
+    font-size: 1.5rem;
+    padding: 10px;
+    height: auto;
+    width: 100%;
+}
+
+.editAddMain form button {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    color: #000000;
+    background-color: rgb(235, 24, 24);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.editAddMain form button:hover {
+    box-shadow: 0 0 3px rgb(235, 24, 24), 0 0 15px rgb(235, 24, 24), 0 0 20px rgb(235, 24, 24);
+    transform: translateY(-2px);
 }
 
 /* My Order */
