@@ -838,8 +838,8 @@ footer p {
     text-decoration: none;
 }
 
-.accountMain .address .actions button:hover {
-    color: #ff4747;
+.accountMain .address .actions a:hover {
+    color: #ee3b3b;
 }
 
 /* Edit Address */
@@ -858,11 +858,13 @@ footer p {
     background-color: #1f1d1d;
     padding: 50px;
     gap: 20px;
+    border: 2px solid rgb(235, 24, 24);
+    border-radius: 20px;
 }
 
 .editAddMain h1 {
     font-size: 3rem;
-    color: red;
+    color: rgb(235, 24, 24);
 }
 
 .editAddMain form {
@@ -878,14 +880,18 @@ footer p {
 
 .editAddMain form label {
     font-size: 1.6rem;
-    color: #FFFFFF;
+    color: rgb(235, 24, 24);
 }
 
 .editAddMain form input {
+    background-color: #333;
+    color: #FFFFFF;
     font-size: 1.5rem;
     padding: 10px;
     height: auto;
     width: 100%;
+    border: none;
+    border-radius: 10px;
 }
 
 .editAddMain form button {
